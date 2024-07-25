@@ -1,5 +1,8 @@
 import random
 from turtle import Turtle
+from player import Player
+
+player = Player()
 
 COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
 STARTING_MOVE_DISTANCE = 5

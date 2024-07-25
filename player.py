@@ -17,4 +17,7 @@ class Player:
     def move(self):
         self.player.forward(MOVE_DISTANCE)
 
+    def next_level(self):
+        self.player.teleport(0, -300)
+
 

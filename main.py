@@ -10,6 +10,7 @@ screen.tracer(0)
 
 player = Player()
 car_manager = CarManager()
+scoreboard = Scoreboard()
 
 # detect player movements
 screen.listen()
@@ -23,5 +24,10 @@ while game_is_on:
 
     car_manager.spawn_car()
     car_manager.move_car()
+
+    if player.player.ycor() >= 280:
+        player.next_level()
+        car_manager.next_level()
+        scoreboard.next_level()
 
 screen.exitonclick()

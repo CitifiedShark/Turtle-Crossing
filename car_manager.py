@@ -5,7 +5,6 @@ COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
 STARTING_MOVE_DISTANCE = 5
 MOVE_INCREMENT = 10
 
-
 class CarManager:
 
     def __init__(self):
@@ -25,11 +24,15 @@ class CarManager:
 
             self.cars.append(car)
 
+        self.distance = STARTING_MOVE_DISTANCE
+
     def move_car(self):
         for car in self.cars:
-            car.forward(STARTING_MOVE_DISTANCE)
+            car.forward(self.distance)
 
             if car.xcor() < -340:
                 car.hideturtle()
                 self.cars.remove(car)
 
+    def next_level(self):
+        self.distance += MOVE_INCREMENT
